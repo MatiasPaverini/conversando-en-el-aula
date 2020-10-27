@@ -1,0 +1,17 @@
+.fullPage{
+  height: 100%;
+}
+
+.halfPage{
+  height: 49%;
+  margin: 1% 1%;
+}
+
+
+.centered{
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+}
+
+.drop { filter: drop-shadow(0 2px 5px rgba(0, 0, 0, 0.7)); }

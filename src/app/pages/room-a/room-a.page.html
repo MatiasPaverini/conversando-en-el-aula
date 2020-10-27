@@ -1,0 +1,49 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Chat 4A</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+<div *ngFor="let message of messages">
+
+  <ion-item-group *ngIf="message.user == user" style="margin-bottom: 1%; margin-left: 15px;">
+    
+    <ion-item-divider>
+      <ion-label>{{message.date}}</ion-label>
+    </ion-item-divider>
+    
+    <ion-item>
+      <ion-label>
+        {{message.content}}
+      </ion-label>
+    </ion-item>
+    
+  </ion-item-group>
+
+  <ion-item-group *ngIf="message.user != user" style="margin-bottom: 1%; margin-right: 15px;">
+    
+    <ion-item-divider>
+      <ion-label>{{message.user}} - {{message.date}}</ion-label>
+    </ion-item-divider>
+    
+    <ion-item>
+      <ion-label>
+        {{message.content}}
+      </ion-label>
+    </ion-item>
+    
+  </ion-item-group>
+</div>
+
+</ion-content>
+
+<ion-footer>
+  <ion-item>
+    <ion-input placeholder="Mensaje..." [(ngModel)]="writtenText" minlength = '1' maxlength= '21'></ion-input>
+    <ion-button shape=round (click)="send()">
+      <ion-icon slot="icon-only" name="send" ></ion-icon>
+    </ion-button>
+  </ion-item>
+</ion-footer>
