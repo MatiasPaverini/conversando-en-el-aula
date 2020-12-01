@@ -1,5 +1,5 @@
 <app-header [title]="title"></app-header>
-
+<!-- 
 <ion-content>
 
   <ion-item>
@@ -41,8 +41,85 @@
   </ion-button>
   <ion-button (click)="tester()" id="admin1" expand="block" fill="outline" shape="round">
     TESTER
-  </ion-button>
+  </ion-button> 
   
-  <router-outlet></router-outlet>
+  
+</ion-content> -->
 
-</ion-content>
+
+<body class="centrado">
+
+  <div id="container">
+
+    <ion-card class="ion-text-center card">
+      <img src="../../assets/twitter-chat.png" width="95%" style="margin: 2%;" alt="">
+      <!-- <ion-card-header>
+        <ion-card-title>Ingreso</ion-card-title>
+      </ion-card-header> -->
+
+      <ion-card-content>
+
+        <div class="form-group row">
+          <ion-item style="margin-bottom: 8%;">
+            <ion-label position="floating">E-Mail</ion-label>
+            <ion-input type="text" id="email" autocomplete="email" autofocus=true placeholder='email@example.com' [(ngModel)]="username" required=true></ion-input>
+          </ion-item>
+          <!-- <ion-item style="margin-bottom: 8%;">
+            <ion-icon name="person-circle" slot="start"></ion-icon>
+            <ion-input type="email" class="form-control" placeholder="Ingrese su correo electrónico"
+              [(ngModel)]="usuario" name="usuario"></ion-input>
+          </ion-item> -->
+        </div>
+
+        <div class="form-group row">
+          <ion-item style="margin-bottom: 8%;">
+            <ion-label position="floating">Password</ion-label>
+            <ion-input type="password" id="pass" autocomplete="current-password" placeholder='password' (keydown.enter) = "submit()" [(ngModel)]="password" required=true></ion-input>
+          </ion-item>
+          <!-- <ion-item style="margin-bottom: 8%;">
+            <ion-icon name="lock-closed" slot="start"></ion-icon>
+            <ion-input type="password" class="form-control" placeholder="Ingrese clave" [(ngModel)]="clave"
+              name="clave"></ion-input>
+          </ion-item> -->
+        </div>
+
+        <div class="form-group row">
+          <ion-button style="margin-bottom: 5%;" (click)="register()" expand="block" fill="outline" shape="round">
+            Registrar
+          </ion-button>
+          <ion-button style="margin-bottom: 5%;" (click)="login()" expand="block" fill="outline" shape="round">
+            Ingresar
+          </ion-button>
+          <!-- <ion-button style="margin-bottom: 5%;" size="large" color="warning" (click)="validarUsuario()">
+            <strong>Ingresar</strong></ion-button>
+          <ion-button style="margin-bottom: 5%;" size="large" color="tertiary" (click)="registrarUsuario()">
+            <strong>Registrar</strong></ion-button> -->            
+          </div>
+
+
+      </ion-card-content>
+    </ion-card>
+
+    <ion-button (click)="admin()" id="admin1" color="light">
+      ADMIN
+    </ion-button>
+    <ion-button (click)="invite()" id="admin1" color="secondary">
+      INVITADO
+    </ion-button>
+    <ion-button (click)="user()" id="admin1" color="primary">
+      USUARIO
+    </ion-button>
+    <ion-button (click)="anon()" id="admin1" color="light">
+      ANONIMO
+    </ion-button>
+    <ion-button (click)="tester()" id="admin1" color="medium">
+      TESTER
+    </ion-button> 
+
+
+  </div>
+
+</body>
+
+
+<router-outlet></router-outlet>
